@@ -12,12 +12,17 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
-        <?php
-            include "albumCard.php";
-        ?>
+        <div class="container">
+            <?php
+                include "albumCard.php";
+            ?>
+        </div>
     </main>
 </body>
 </html>
