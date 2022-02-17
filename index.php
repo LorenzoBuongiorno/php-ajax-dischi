@@ -1,6 +1,5 @@
 <?php
-include "database/albums.php";
- var_dump($albums);
+
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +11,13 @@ include "database/albums.php";
     <title>php-ajax-dischi</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <main>
+        <?php
+            include "albumCard.php";
+        ?>
+    </main>
 </body>
 </html>
