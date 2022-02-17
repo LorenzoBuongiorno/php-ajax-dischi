@@ -17,12 +17,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
-        <div class="container">
-            <?php
-                include "albumCard.php";
-            ?>
-        </div>
-    </main>
+    <div id="app">
+        <main>
+            <div class="container"> 
+                <div class="card"  v-for="disco in dischiList">
+                    <div>
+                        <div class="picture">
+                            <img :src="disco.poster" alt="">
+                        </div>
+                        <div class="title">
+                        {{disco.title}}
+                        </div>
+                    </div>
+                    <div>
+                        <div class="details">
+                            <div>{{disco.author}}</div>
+                            <div> {{disco.year}} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                dischiList: []
+            },
+            mounted() {
+                axios.get('http://localhost/php-ajax-dischi/api/apiCall.php')
+                .then(resp => {
+                        this.dischiList = resp.data;
+                })
+            }
+        })
+    </script>
 </body>
 </html>
